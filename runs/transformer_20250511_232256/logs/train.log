@@ -1,0 +1,540 @@
+2025-05-11 23:22:56,921 - INFO - Arguments: Namespace(model_type='transformer', num_workers=2)
+2025-05-11 23:22:56,921 - INFO - Hyperparameters for transformer: {'batch_size': 64, 'epochs': 50, 'learning_rate': 0.001, 'weight_decay': 1e-05, 'seed': 42, 'num_classes': 10, 'log_interval': 100, 'model_name': 'transformer', 'd_model': 256, 'nhead': 8, 'num_layers': 4, 'dim_feedforward': 1024, 'dropout_rate': 0.1, 'optimizer': 'adam', 'scheduler': 'cosine', 'T_max': 10}
+2025-05-11 23:22:56,921 - INFO - Using device: cuda
+2025-05-11 23:22:56,981 - INFO - Dataset loaded: Train=54000, Validation=6000, Test=10000
+2025-05-11 23:22:57,153 - INFO - Model selected: transformer
+2025-05-11 23:22:57,153 - INFO - TransformerModel(
+  (embedding): Linear(in_features=28, out_features=256, bias=True)
+  (positional_encoding): PositionalEncoding()
+  (transformer_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0-3): 4 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (fc): Linear(in_features=256, out_features=10, bias=True)
+  (dropout): Dropout(p=0.1, inplace=False)
+)
+2025-05-11 23:22:57,161 - INFO - Optimizer: adam, LR: 0.001, Weight Decay: 1e-05
+2025-05-11 23:22:57,162 - INFO - Using CosineAnnealingLR scheduler with T_max=10
+2025-05-11 23:22:57,162 - INFO - Starting training...
+2025-05-11 23:23:05,854 - INFO - Epoch [1/50], Step [100/844], Loss: 0.5367, Acc: 0.7969
+2025-05-11 23:23:07,522 - INFO - Epoch [1/50], Step [200/844], Loss: 0.2475, Acc: 0.9219
+2025-05-11 23:23:09,149 - INFO - Epoch [1/50], Step [300/844], Loss: 0.2216, Acc: 0.9219
+2025-05-11 23:23:10,755 - INFO - Epoch [1/50], Step [400/844], Loss: 0.2131, Acc: 0.8906
+2025-05-11 23:23:13,015 - INFO - Epoch [1/50], Step [500/844], Loss: 0.1177, Acc: 0.9844
+2025-05-11 23:23:17,111 - INFO - Epoch [1/50], Step [600/844], Loss: 0.2458, Acc: 0.9219
+2025-05-11 23:23:21,441 - INFO - Epoch [1/50], Step [700/844], Loss: 0.1846, Acc: 0.9531
+2025-05-11 23:23:27,069 - INFO - Epoch [1/50], Step [800/844], Loss: 0.2200, Acc: 0.9375
+2025-05-11 23:23:41,447 - INFO - Epoch [1/50] Summary: Train Loss: 0.3208, Train Acc: 0.8994 | Val Loss: 0.1774, Val Acc: 0.9520
+2025-05-11 23:23:41,468 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9520
+2025-05-11 23:23:41,468 - INFO - Epoch 1: Learning rate updated to 0.000976
+2025-05-11 23:23:53,938 - INFO - Epoch [2/50], Step [100/844], Loss: 0.0698, Acc: 0.9844
+2025-05-11 23:23:55,559 - INFO - Epoch [2/50], Step [200/844], Loss: 0.0865, Acc: 0.9688
+2025-05-11 23:23:57,775 - INFO - Epoch [2/50], Step [300/844], Loss: 0.0244, Acc: 1.0000
+2025-05-11 23:23:59,376 - INFO - Epoch [2/50], Step [400/844], Loss: 0.2404, Acc: 0.9531
+2025-05-11 23:24:01,290 - INFO - Epoch [2/50], Step [500/844], Loss: 0.1095, Acc: 0.9531
+2025-05-11 23:24:03,178 - INFO - Epoch [2/50], Step [600/844], Loss: 0.1111, Acc: 0.9531
+2025-05-11 23:24:05,944 - INFO - Epoch [2/50], Step [700/844], Loss: 0.3642, Acc: 0.9062
+2025-05-11 23:24:10,443 - INFO - Epoch [2/50], Step [800/844], Loss: 0.1077, Acc: 0.9531
+2025-05-11 23:24:24,335 - INFO - Epoch [2/50] Summary: Train Loss: 0.2176, Train Acc: 0.9373 | Val Loss: 0.1882, Val Acc: 0.9467
+2025-05-11 23:24:24,336 - INFO - Epoch 2: Learning rate updated to 0.000905
+2025-05-11 23:24:39,239 - INFO - Epoch [3/50], Step [100/844], Loss: 0.3513, Acc: 0.8750
+2025-05-11 23:24:43,522 - INFO - Epoch [3/50], Step [200/844], Loss: 0.2894, Acc: 0.9531
+2025-05-11 23:24:46,320 - INFO - Epoch [3/50], Step [300/844], Loss: 0.4591, Acc: 0.8594
+2025-05-11 23:24:47,913 - INFO - Epoch [3/50], Step [400/844], Loss: 0.1241, Acc: 0.9531
+2025-05-11 23:24:50,122 - INFO - Epoch [3/50], Step [500/844], Loss: 0.1626, Acc: 0.9531
+2025-05-11 23:24:51,736 - INFO - Epoch [3/50], Step [600/844], Loss: 0.1205, Acc: 0.9531
+2025-05-11 23:24:53,979 - INFO - Epoch [3/50], Step [700/844], Loss: 0.1801, Acc: 0.9531
+2025-05-11 23:24:55,598 - INFO - Epoch [3/50], Step [800/844], Loss: 0.1068, Acc: 0.9844
+2025-05-11 23:25:05,439 - INFO - Epoch [3/50] Summary: Train Loss: 0.2108, Train Acc: 0.9382 | Val Loss: 0.2305, Val Acc: 0.9337
+2025-05-11 23:25:05,439 - INFO - Epoch 3: Learning rate updated to 0.000794
+2025-05-11 23:25:20,092 - INFO - Epoch [4/50], Step [100/844], Loss: 0.1812, Acc: 0.9531
+2025-05-11 23:25:25,823 - INFO - Epoch [4/50], Step [200/844], Loss: 0.1512, Acc: 0.9531
+2025-05-11 23:25:31,034 - INFO - Epoch [4/50], Step [300/844], Loss: 0.2023, Acc: 0.9375
+2025-05-11 23:25:34,825 - INFO - Epoch [4/50], Step [400/844], Loss: 0.0221, Acc: 1.0000
+2025-05-11 23:25:38,631 - INFO - Epoch [4/50], Step [500/844], Loss: 0.1956, Acc: 0.9219
+2025-05-11 23:25:41,042 - INFO - Epoch [4/50], Step [600/844], Loss: 0.0902, Acc: 0.9844
+2025-05-11 23:25:42,673 - INFO - Epoch [4/50], Step [700/844], Loss: 0.1540, Acc: 0.9375
+2025-05-11 23:25:44,318 - INFO - Epoch [4/50], Step [800/844], Loss: 0.1057, Acc: 0.9375
+2025-05-11 23:25:54,510 - INFO - Epoch [4/50] Summary: Train Loss: 0.1798, Train Acc: 0.9475 | Val Loss: 0.1570, Val Acc: 0.9570
+2025-05-11 23:25:54,528 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9570
+2025-05-11 23:25:54,528 - INFO - Epoch 4: Learning rate updated to 0.000655
+2025-05-11 23:26:07,982 - INFO - Epoch [5/50], Step [100/844], Loss: 0.1231, Acc: 0.9688
+2025-05-11 23:26:13,946 - INFO - Epoch [5/50], Step [200/844], Loss: 0.2617, Acc: 0.9375
+2025-05-11 23:26:19,752 - INFO - Epoch [5/50], Step [300/844], Loss: 0.1099, Acc: 0.9688
+2025-05-11 23:26:23,986 - INFO - Epoch [5/50], Step [400/844], Loss: 0.3279, Acc: 0.9062
+2025-05-11 23:26:28,734 - INFO - Epoch [5/50], Step [500/844], Loss: 0.1293, Acc: 0.9531
+2025-05-11 23:26:33,075 - INFO - Epoch [5/50], Step [600/844], Loss: 0.2171, Acc: 0.9375
+2025-05-11 23:26:37,067 - INFO - Epoch [5/50], Step [700/844], Loss: 0.0899, Acc: 0.9688
+2025-05-11 23:26:41,341 - INFO - Epoch [5/50], Step [800/844], Loss: 0.0730, Acc: 0.9688
+2025-05-11 23:26:52,160 - INFO - Epoch [5/50] Summary: Train Loss: 0.1634, Train Acc: 0.9521 | Val Loss: 0.1576, Val Acc: 0.9548
+2025-05-11 23:26:52,161 - INFO - Epoch 5: Learning rate updated to 0.000500
+2025-05-11 23:27:05,850 - INFO - Epoch [6/50], Step [100/844], Loss: 0.2335, Acc: 0.9375
+2025-05-11 23:27:09,719 - INFO - Epoch [6/50], Step [200/844], Loss: 0.1075, Acc: 0.9531
+2025-05-11 23:27:13,664 - INFO - Epoch [6/50], Step [300/844], Loss: 0.2931, Acc: 0.9219
+2025-05-11 23:27:17,869 - INFO - Epoch [6/50], Step [400/844], Loss: 0.0948, Acc: 0.9844
+2025-05-11 23:27:21,721 - INFO - Epoch [6/50], Step [500/844], Loss: 0.0874, Acc: 0.9844
+2025-05-11 23:27:26,630 - INFO - Epoch [6/50], Step [600/844], Loss: 0.0791, Acc: 0.9844
+2025-05-11 23:27:31,357 - INFO - Epoch [6/50], Step [700/844], Loss: 0.0991, Acc: 0.9688
+2025-05-11 23:27:35,263 - INFO - Epoch [6/50], Step [800/844], Loss: 0.1717, Acc: 0.9375
+2025-05-11 23:27:45,597 - INFO - Epoch [6/50] Summary: Train Loss: 0.1279, Train Acc: 0.9615 | Val Loss: 0.1187, Val Acc: 0.9652
+2025-05-11 23:27:45,614 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9652
+2025-05-11 23:27:45,614 - INFO - Epoch 6: Learning rate updated to 0.000345
+2025-05-11 23:27:56,891 - INFO - Epoch [7/50], Step [100/844], Loss: 0.0569, Acc: 0.9844
+2025-05-11 23:28:00,840 - INFO - Epoch [7/50], Step [200/844], Loss: 0.1225, Acc: 0.9688
+2025-05-11 23:28:04,529 - INFO - Epoch [7/50], Step [300/844], Loss: 0.0845, Acc: 0.9844
+2025-05-11 23:28:09,625 - INFO - Epoch [7/50], Step [400/844], Loss: 0.0959, Acc: 0.9688
+2025-05-11 23:28:15,388 - INFO - Epoch [7/50], Step [500/844], Loss: 0.1716, Acc: 0.9375
+2025-05-11 23:28:20,238 - INFO - Epoch [7/50], Step [600/844], Loss: 0.3218, Acc: 0.9375
+2025-05-11 23:28:24,066 - INFO - Epoch [7/50], Step [700/844], Loss: 0.0962, Acc: 0.9688
+2025-05-11 23:28:27,921 - INFO - Epoch [7/50], Step [800/844], Loss: 0.0993, Acc: 0.9688
+2025-05-11 23:28:39,020 - INFO - Epoch [7/50] Summary: Train Loss: 0.1020, Train Acc: 0.9694 | Val Loss: 0.0962, Val Acc: 0.9725
+2025-05-11 23:28:39,043 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9725
+2025-05-11 23:28:39,044 - INFO - Epoch 7: Learning rate updated to 0.000206
+2025-05-11 23:28:49,774 - INFO - Epoch [8/50], Step [100/844], Loss: 0.0677, Acc: 0.9844
+2025-05-11 23:28:55,115 - INFO - Epoch [8/50], Step [200/844], Loss: 0.0568, Acc: 0.9844
+2025-05-11 23:29:00,907 - INFO - Epoch [8/50], Step [300/844], Loss: 0.1105, Acc: 0.9844
+2025-05-11 23:29:06,707 - INFO - Epoch [8/50], Step [400/844], Loss: 0.1903, Acc: 0.9531
+2025-05-11 23:29:11,078 - INFO - Epoch [8/50], Step [500/844], Loss: 0.0820, Acc: 0.9688
+2025-05-11 23:29:15,069 - INFO - Epoch [8/50], Step [600/844], Loss: 0.1159, Acc: 0.9688
+2025-05-11 23:29:19,626 - INFO - Epoch [8/50], Step [700/844], Loss: 0.0047, Acc: 1.0000
+2025-05-11 23:29:23,565 - INFO - Epoch [8/50], Step [800/844], Loss: 0.2237, Acc: 0.9531
+2025-05-11 23:29:34,151 - INFO - Epoch [8/50] Summary: Train Loss: 0.0754, Train Acc: 0.9768 | Val Loss: 0.0832, Val Acc: 0.9743
+2025-05-11 23:29:34,169 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9743
+2025-05-11 23:29:34,169 - INFO - Epoch 8: Learning rate updated to 0.000095
+2025-05-11 23:29:45,600 - INFO - Epoch [9/50], Step [100/844], Loss: 0.0188, Acc: 1.0000
+2025-05-11 23:29:51,479 - INFO - Epoch [9/50], Step [200/844], Loss: 0.0523, Acc: 0.9844
+2025-05-11 23:29:56,174 - INFO - Epoch [9/50], Step [300/844], Loss: 0.2138, Acc: 0.9375
+2025-05-11 23:30:00,055 - INFO - Epoch [9/50], Step [400/844], Loss: 0.0066, Acc: 1.0000
+2025-05-11 23:30:04,476 - INFO - Epoch [9/50], Step [500/844], Loss: 0.1075, Acc: 0.9531
+2025-05-11 23:30:08,266 - INFO - Epoch [9/50], Step [600/844], Loss: 0.0683, Acc: 0.9688
+2025-05-11 23:30:12,043 - INFO - Epoch [9/50], Step [700/844], Loss: 0.0611, Acc: 0.9688
+2025-05-11 23:30:17,292 - INFO - Epoch [9/50], Step [800/844], Loss: 0.0659, Acc: 0.9844
+2025-05-11 23:30:29,279 - INFO - Epoch [9/50] Summary: Train Loss: 0.0566, Train Acc: 0.9822 | Val Loss: 0.0717, Val Acc: 0.9777
+2025-05-11 23:30:29,296 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9777
+2025-05-11 23:30:29,298 - INFO - Epoch 9: Learning rate updated to 0.000024
+2025-05-11 23:30:37,719 - INFO - Epoch [10/50], Step [100/844], Loss: 0.1534, Acc: 0.9688
+2025-05-11 23:30:41,267 - INFO - Epoch [10/50], Step [200/844], Loss: 0.1392, Acc: 0.9531
+2025-05-11 23:30:45,762 - INFO - Epoch [10/50], Step [300/844], Loss: 0.0249, Acc: 0.9844
+2025-05-11 23:30:49,583 - INFO - Epoch [10/50], Step [400/844], Loss: 0.0107, Acc: 1.0000
+2025-05-11 23:30:53,423 - INFO - Epoch [10/50], Step [500/844], Loss: 0.0379, Acc: 0.9844
+2025-05-11 23:30:59,313 - INFO - Epoch [10/50], Step [600/844], Loss: 0.0153, Acc: 1.0000
+2025-05-11 23:31:05,197 - INFO - Epoch [10/50], Step [700/844], Loss: 0.0869, Acc: 0.9531
+2025-05-11 23:31:10,991 - INFO - Epoch [10/50], Step [800/844], Loss: 0.0084, Acc: 1.0000
+2025-05-11 23:31:23,433 - INFO - Epoch [10/50] Summary: Train Loss: 0.0487, Train Acc: 0.9848 | Val Loss: 0.0680, Val Acc: 0.9805
+2025-05-11 23:31:23,450 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9805
+2025-05-11 23:31:23,450 - INFO - Epoch 10: Learning rate updated to 0.000000
+2025-05-11 23:31:31,710 - INFO - Epoch [11/50], Step [100/844], Loss: 0.0121, Acc: 1.0000
+2025-05-11 23:31:34,588 - INFO - Epoch [11/50], Step [200/844], Loss: 0.0124, Acc: 1.0000
+2025-05-11 23:31:38,591 - INFO - Epoch [11/50], Step [300/844], Loss: 0.1051, Acc: 0.9531
+2025-05-11 23:31:42,527 - INFO - Epoch [11/50], Step [400/844], Loss: 0.0820, Acc: 0.9844
+2025-05-11 23:31:48,340 - INFO - Epoch [11/50], Step [500/844], Loss: 0.0503, Acc: 0.9844
+2025-05-11 23:31:54,118 - INFO - Epoch [11/50], Step [600/844], Loss: 0.0469, Acc: 0.9844
+2025-05-11 23:31:59,972 - INFO - Epoch [11/50], Step [700/844], Loss: 0.0146, Acc: 1.0000
+2025-05-11 23:32:05,870 - INFO - Epoch [11/50], Step [800/844], Loss: 0.0278, Acc: 0.9844
+2025-05-11 23:32:18,604 - INFO - Epoch [11/50] Summary: Train Loss: 0.0475, Train Acc: 0.9850 | Val Loss: 0.0680, Val Acc: 0.9805
+2025-05-11 23:32:18,604 - INFO - Epoch 11: Learning rate updated to 0.000024
+2025-05-11 23:32:27,610 - INFO - Epoch [12/50], Step [100/844], Loss: 0.0699, Acc: 0.9844
+2025-05-11 23:32:29,226 - INFO - Epoch [12/50], Step [200/844], Loss: 0.1172, Acc: 0.9375
+2025-05-11 23:32:32,961 - INFO - Epoch [12/50], Step [300/844], Loss: 0.0531, Acc: 0.9688
+2025-05-11 23:32:38,036 - INFO - Epoch [12/50], Step [400/844], Loss: 0.0450, Acc: 0.9688
+2025-05-11 23:32:43,734 - INFO - Epoch [12/50], Step [500/844], Loss: 0.2282, Acc: 0.9688
+2025-05-11 23:32:49,450 - INFO - Epoch [12/50], Step [600/844], Loss: 0.0435, Acc: 0.9844
+2025-05-11 23:32:55,315 - INFO - Epoch [12/50], Step [700/844], Loss: 0.0333, Acc: 0.9844
+2025-05-11 23:33:01,097 - INFO - Epoch [12/50], Step [800/844], Loss: 0.0045, Acc: 1.0000
+2025-05-11 23:33:14,246 - INFO - Epoch [12/50] Summary: Train Loss: 0.0472, Train Acc: 0.9850 | Val Loss: 0.0693, Val Acc: 0.9818
+2025-05-11 23:33:14,262 - INFO - Best model saved to runs\transformer_20250511_232256\transformer_best.pth with validation accuracy: 0.9818
+2025-05-11 23:33:14,263 - INFO - Epoch 12: Learning rate updated to 0.000095
+2025-05-11 23:33:22,862 - INFO - Epoch [13/50], Step [100/844], Loss: 0.0415, Acc: 0.9688
+2025-05-11 23:33:24,482 - INFO - Epoch [13/50], Step [200/844], Loss: 0.0206, Acc: 1.0000
+2025-05-11 23:33:26,104 - INFO - Epoch [13/50], Step [300/844], Loss: 0.0151, Acc: 1.0000
+2025-05-11 23:33:30,317 - INFO - Epoch [13/50], Step [400/844], Loss: 0.0160, Acc: 1.0000
+2025-05-11 23:33:36,191 - INFO - Epoch [13/50], Step [500/844], Loss: 0.0103, Acc: 1.0000
+2025-05-11 23:33:42,032 - INFO - Epoch [13/50], Step [600/844], Loss: 0.0154, Acc: 1.0000
+2025-05-11 23:33:47,836 - INFO - Epoch [13/50], Step [700/844], Loss: 0.0160, Acc: 1.0000
+2025-05-11 23:33:53,649 - INFO - Epoch [13/50], Step [800/844], Loss: 0.0141, Acc: 1.0000
+2025-05-11 23:34:09,043 - INFO - Epoch [13/50] Summary: Train Loss: 0.0496, Train Acc: 0.9844 | Val Loss: 0.0752, Val Acc: 0.9793
+2025-05-11 23:34:09,043 - INFO - Epoch 13: Learning rate updated to 0.000206
+2025-05-11 23:34:18,450 - INFO - Epoch [14/50], Step [100/844], Loss: 0.1160, Acc: 0.9375
+2025-05-11 23:34:20,070 - INFO - Epoch [14/50], Step [200/844], Loss: 0.0365, Acc: 0.9844
+2025-05-11 23:34:21,716 - INFO - Epoch [14/50], Step [300/844], Loss: 0.1247, Acc: 0.9531
+2025-05-11 23:34:23,339 - INFO - Epoch [14/50], Step [400/844], Loss: 0.0537, Acc: 0.9844
+2025-05-11 23:34:28,082 - INFO - Epoch [14/50], Step [500/844], Loss: 0.0028, Acc: 1.0000
+2025-05-11 23:34:33,996 - INFO - Epoch [14/50], Step [600/844], Loss: 0.1015, Acc: 0.9844
+2025-05-11 23:34:39,821 - INFO - Epoch [14/50], Step [700/844], Loss: 0.0623, Acc: 0.9844
+2025-05-11 23:34:45,667 - INFO - Epoch [14/50], Step [800/844], Loss: 0.1039, Acc: 0.9844
+2025-05-11 23:34:59,944 - INFO - Epoch [14/50] Summary: Train Loss: 0.0638, Train Acc: 0.9795 | Val Loss: 0.0846, Val Acc: 0.9770
+2025-05-11 23:34:59,944 - INFO - Epoch 14: Learning rate updated to 0.000345
+2025-05-11 23:35:09,958 - INFO - Epoch [15/50], Step [100/844], Loss: 0.0276, Acc: 0.9844
+2025-05-11 23:35:11,579 - INFO - Epoch [15/50], Step [200/844], Loss: 0.0509, Acc: 0.9688
+2025-05-11 23:35:14,393 - INFO - Epoch [15/50], Step [300/844], Loss: 0.0633, Acc: 0.9844
+2025-05-11 23:35:16,011 - INFO - Epoch [15/50], Step [400/844], Loss: 0.0514, Acc: 0.9688
+2025-05-11 23:35:17,647 - INFO - Epoch [15/50], Step [500/844], Loss: 0.0498, Acc: 0.9844
+2025-05-11 23:35:19,275 - INFO - Epoch [15/50], Step [600/844], Loss: 0.0605, Acc: 0.9688
+2025-05-11 23:35:22,767 - INFO - Epoch [15/50], Step [700/844], Loss: 0.1970, Acc: 0.9531
+2025-05-11 23:35:28,702 - INFO - Epoch [15/50], Step [800/844], Loss: 0.0352, Acc: 1.0000
+2025-05-11 23:35:40,794 - INFO - Epoch [15/50] Summary: Train Loss: 0.0838, Train Acc: 0.9741 | Val Loss: 0.0851, Val Acc: 0.9753
+2025-05-11 23:35:40,795 - INFO - Epoch 15: Learning rate updated to 0.000500
+2025-05-11 23:35:53,292 - INFO - Epoch [16/50], Step [100/844], Loss: 0.0371, Acc: 0.9844
+2025-05-11 23:35:58,987 - INFO - Epoch [16/50], Step [200/844], Loss: 0.1798, Acc: 0.9531
+2025-05-11 23:36:02,900 - INFO - Epoch [16/50], Step [300/844], Loss: 0.1580, Acc: 0.9688
+2025-05-11 23:36:04,347 - INFO - Epoch [16/50], Step [400/844], Loss: 0.1915, Acc: 0.9531
+2025-05-11 23:36:05,799 - INFO - Epoch [16/50], Step [500/844], Loss: 0.1247, Acc: 0.9688
+2025-05-11 23:36:07,275 - INFO - Epoch [16/50], Step [600/844], Loss: 0.0907, Acc: 0.9531
+2025-05-11 23:36:08,857 - INFO - Epoch [16/50], Step [700/844], Loss: 0.2864, Acc: 0.9062
+2025-05-11 23:36:11,334 - INFO - Epoch [16/50], Step [800/844], Loss: 0.1023, Acc: 0.9688
+2025-05-11 23:36:21,028 - INFO - Epoch [16/50] Summary: Train Loss: 0.1123, Train Acc: 0.9661 | Val Loss: 0.1142, Val Acc: 0.9652
+2025-05-11 23:36:21,028 - INFO - Epoch 16: Learning rate updated to 0.000655
+2025-05-11 23:36:33,772 - INFO - Epoch [17/50], Step [100/844], Loss: 0.1356, Acc: 0.9375
+2025-05-11 23:36:39,489 - INFO - Epoch [17/50], Step [200/844], Loss: 0.0967, Acc: 0.9531
+2025-05-11 23:36:45,170 - INFO - Epoch [17/50], Step [300/844], Loss: 0.1263, Acc: 0.9688
+2025-05-11 23:36:50,828 - INFO - Epoch [17/50], Step [400/844], Loss: 0.1291, Acc: 0.9688
+2025-05-11 23:36:56,460 - INFO - Epoch [17/50], Step [500/844], Loss: 0.2284, Acc: 0.9531
+2025-05-11 23:37:00,644 - INFO - Epoch [17/50], Step [600/844], Loss: 0.2073, Acc: 0.9219
+2025-05-11 23:37:02,134 - INFO - Epoch [17/50], Step [700/844], Loss: 0.0362, Acc: 1.0000
+2025-05-11 23:37:03,614 - INFO - Epoch [17/50], Step [800/844], Loss: 0.2475, Acc: 0.9531
+2025-05-11 23:37:12,824 - INFO - Epoch [17/50] Summary: Train Loss: 0.1290, Train Acc: 0.9618 | Val Loss: 0.1420, Val Acc: 0.9633
+2025-05-11 23:37:12,824 - INFO - Epoch 17: Learning rate updated to 0.000794
+2025-05-11 23:37:25,963 - INFO - Epoch [18/50], Step [100/844], Loss: 0.0605, Acc: 0.9844
+2025-05-11 23:37:31,943 - INFO - Epoch [18/50], Step [200/844], Loss: 0.1438, Acc: 0.9375
+2025-05-11 23:37:37,851 - INFO - Epoch [18/50], Step [300/844], Loss: 0.2455, Acc: 0.9062
+2025-05-11 23:37:43,881 - INFO - Epoch [18/50], Step [400/844], Loss: 0.1240, Acc: 0.9531
+2025-05-11 23:37:49,612 - INFO - Epoch [18/50], Step [500/844], Loss: 0.0342, Acc: 0.9844
+2025-05-11 23:37:55,136 - INFO - Epoch [18/50], Step [600/844], Loss: 0.1480, Acc: 0.9531
+2025-05-11 23:37:58,934 - INFO - Epoch [18/50], Step [700/844], Loss: 0.1279, Acc: 0.9688
+2025-05-11 23:38:01,709 - INFO - Epoch [18/50], Step [800/844], Loss: 0.0884, Acc: 0.9688
+2025-05-11 23:38:11,324 - INFO - Epoch [18/50] Summary: Train Loss: 0.1572, Train Acc: 0.9524 | Val Loss: 0.1461, Val Acc: 0.9593
+2025-05-11 23:38:11,325 - INFO - Epoch 18: Learning rate updated to 0.000905
+2025-05-11 23:38:24,783 - INFO - Epoch [19/50], Step [100/844], Loss: 0.1341, Acc: 0.9531
+2025-05-11 23:38:30,741 - INFO - Epoch [19/50], Step [200/844], Loss: 0.1388, Acc: 0.9844
+2025-05-11 23:38:36,480 - INFO - Epoch [19/50], Step [300/844], Loss: 0.1380, Acc: 0.9531
+2025-05-11 23:38:41,951 - INFO - Epoch [19/50], Step [400/844], Loss: 0.1099, Acc: 0.9844
+2025-05-11 23:38:45,677 - INFO - Epoch [19/50], Step [500/844], Loss: 0.2718, Acc: 0.9219
+2025-05-11 23:38:49,541 - INFO - Epoch [19/50], Step [600/844], Loss: 0.1540, Acc: 0.9688
+2025-05-11 23:38:53,812 - INFO - Epoch [19/50], Step [700/844], Loss: 0.4753, Acc: 0.8750
+2025-05-11 23:38:57,655 - INFO - Epoch [19/50], Step [800/844], Loss: 0.3566, Acc: 0.9062
+2025-05-11 23:39:09,032 - INFO - Epoch [19/50] Summary: Train Loss: 0.2213, Train Acc: 0.9321 | Val Loss: 0.1901, Val Acc: 0.9462
+2025-05-11 23:39:09,032 - INFO - Epoch 19: Learning rate updated to 0.000976
+2025-05-11 23:39:21,446 - INFO - Epoch [20/50], Step [100/844], Loss: 0.2318, Acc: 0.9375
+2025-05-11 23:39:25,806 - INFO - Epoch [20/50], Step [200/844], Loss: 0.0936, Acc: 0.9844
+2025-05-11 23:39:29,659 - INFO - Epoch [20/50], Step [300/844], Loss: 0.1552, Acc: 0.9375
+2025-05-11 23:39:34,161 - INFO - Epoch [20/50], Step [400/844], Loss: 0.1291, Acc: 0.9531
+2025-05-11 23:39:39,974 - INFO - Epoch [20/50], Step [500/844], Loss: 0.2760, Acc: 0.9062
+2025-05-11 23:39:45,867 - INFO - Epoch [20/50], Step [600/844], Loss: 0.2306, Acc: 0.9375
+2025-05-11 23:39:51,580 - INFO - Epoch [20/50], Step [700/844], Loss: 0.1245, Acc: 0.9688
+2025-05-11 23:39:57,270 - INFO - Epoch [20/50], Step [800/844], Loss: 0.1479, Acc: 0.9531
+2025-05-11 23:40:08,412 - INFO - Epoch [20/50] Summary: Train Loss: 0.2019, Train Acc: 0.9383 | Val Loss: 0.2668, Val Acc: 0.9232
+2025-05-11 23:40:08,413 - INFO - Epoch 20: Learning rate updated to 0.001000
+2025-05-11 23:40:19,365 - INFO - Epoch [21/50], Step [100/844], Loss: 0.2147, Acc: 0.9062
+2025-05-11 23:40:24,502 - INFO - Epoch [21/50], Step [200/844], Loss: 0.1154, Acc: 0.9688
+2025-05-11 23:40:30,436 - INFO - Epoch [21/50], Step [300/844], Loss: 0.2028, Acc: 0.9375
+2025-05-11 23:40:36,203 - INFO - Epoch [21/50], Step [400/844], Loss: 0.2400, Acc: 0.9375
+2025-05-11 23:40:42,086 - INFO - Epoch [21/50], Step [500/844], Loss: 0.3100, Acc: 0.8906
+2025-05-11 23:40:47,975 - INFO - Epoch [21/50], Step [600/844], Loss: 0.2636, Acc: 0.9062
+2025-05-11 23:40:53,788 - INFO - Epoch [21/50], Step [700/844], Loss: 0.1923, Acc: 0.9219
+2025-05-11 23:40:59,126 - INFO - Epoch [21/50], Step [800/844], Loss: 0.2823, Acc: 0.8906
+2025-05-11 23:41:09,151 - INFO - Epoch [21/50] Summary: Train Loss: 0.2352, Train Acc: 0.9301 | Val Loss: 0.1943, Val Acc: 0.9442
+2025-05-11 23:41:09,151 - INFO - Epoch 21: Learning rate updated to 0.000976
+2025-05-11 23:41:20,986 - INFO - Epoch [22/50], Step [100/844], Loss: 0.1997, Acc: 0.9375
+2025-05-11 23:41:27,021 - INFO - Epoch [22/50], Step [200/844], Loss: 0.2898, Acc: 0.9062
+2025-05-11 23:41:33,007 - INFO - Epoch [22/50], Step [300/844], Loss: 0.2120, Acc: 0.9375
+2025-05-11 23:41:38,994 - INFO - Epoch [22/50], Step [400/844], Loss: 0.1773, Acc: 0.9688
+2025-05-11 23:41:44,963 - INFO - Epoch [22/50], Step [500/844], Loss: 0.2099, Acc: 0.9219
+2025-05-11 23:41:50,764 - INFO - Epoch [22/50], Step [600/844], Loss: 0.1823, Acc: 0.9375
+2025-05-11 23:41:56,588 - INFO - Epoch [22/50], Step [700/844], Loss: 0.1656, Acc: 0.9688
+2025-05-11 23:42:00,584 - INFO - Epoch [22/50], Step [800/844], Loss: 0.2334, Acc: 0.9531
+2025-05-11 23:42:10,615 - INFO - Epoch [22/50] Summary: Train Loss: 0.2139, Train Acc: 0.9369 | Val Loss: 0.1752, Val Acc: 0.9512
+2025-05-11 23:42:10,615 - INFO - Epoch 22: Learning rate updated to 0.000905
+2025-05-11 23:42:24,018 - INFO - Epoch [23/50], Step [100/844], Loss: 0.0658, Acc: 0.9688
+2025-05-11 23:42:29,976 - INFO - Epoch [23/50], Step [200/844], Loss: 0.3093, Acc: 0.9375
+2025-05-11 23:42:36,175 - INFO - Epoch [23/50], Step [300/844], Loss: 0.2383, Acc: 0.9531
+2025-05-11 23:42:42,163 - INFO - Epoch [23/50], Step [400/844], Loss: 0.1940, Acc: 0.9688
+2025-05-11 23:42:47,323 - INFO - Epoch [23/50], Step [500/844], Loss: 0.2081, Acc: 0.9375
+2025-05-11 23:42:51,307 - INFO - Epoch [23/50], Step [600/844], Loss: 0.1115, Acc: 0.9844
+2025-05-11 23:42:55,539 - INFO - Epoch [23/50], Step [700/844], Loss: 0.2196, Acc: 0.9531
+2025-05-11 23:42:59,413 - INFO - Epoch [23/50], Step [800/844], Loss: 0.1066, Acc: 0.9688
+2025-05-11 23:43:11,578 - INFO - Epoch [23/50] Summary: Train Loss: 0.1946, Train Acc: 0.9414 | Val Loss: 0.1769, Val Acc: 0.9482
+2025-05-11 23:43:11,578 - INFO - Epoch 23: Learning rate updated to 0.000794
+2025-05-11 23:43:23,564 - INFO - Epoch [24/50], Step [100/844], Loss: 0.1761, Acc: 0.9219
+2025-05-11 23:43:27,709 - INFO - Epoch [24/50], Step [200/844], Loss: 0.3066, Acc: 0.9062
+2025-05-11 23:43:31,881 - INFO - Epoch [24/50], Step [300/844], Loss: 0.1503, Acc: 0.9375
+2025-05-11 23:43:35,797 - INFO - Epoch [24/50], Step [400/844], Loss: 0.1357, Acc: 0.9688
+2025-05-11 23:43:41,056 - INFO - Epoch [24/50], Step [500/844], Loss: 0.2811, Acc: 0.9531
+2025-05-11 23:43:46,728 - INFO - Epoch [24/50], Step [600/844], Loss: 0.0981, Acc: 0.9531
+2025-05-11 23:43:52,403 - INFO - Epoch [24/50], Step [700/844], Loss: 0.2398, Acc: 0.9531
+2025-05-11 23:43:58,100 - INFO - Epoch [24/50], Step [800/844], Loss: 0.2683, Acc: 0.9062
+2025-05-11 23:44:09,434 - INFO - Epoch [24/50] Summary: Train Loss: 0.1703, Train Acc: 0.9483 | Val Loss: 0.1655, Val Acc: 0.9508
+2025-05-11 23:44:09,435 - INFO - Epoch 24: Learning rate updated to 0.000655
+2025-05-11 23:44:20,506 - INFO - Epoch [25/50], Step [100/844], Loss: 0.0830, Acc: 0.9688
+2025-05-11 23:44:25,365 - INFO - Epoch [25/50], Step [200/844], Loss: 0.2467, Acc: 0.9375
+2025-05-11 23:44:31,324 - INFO - Epoch [25/50], Step [300/844], Loss: 0.2756, Acc: 0.9062
+2025-05-11 23:44:37,310 - INFO - Epoch [25/50], Step [400/844], Loss: 0.1332, Acc: 0.9688
+2025-05-11 23:44:43,184 - INFO - Epoch [25/50], Step [500/844], Loss: 0.4625, Acc: 0.8750
+2025-05-11 23:44:49,029 - INFO - Epoch [25/50], Step [600/844], Loss: 0.0552, Acc: 0.9688
+2025-05-11 23:44:54,881 - INFO - Epoch [25/50], Step [700/844], Loss: 0.3702, Acc: 0.9219
+2025-05-11 23:45:00,640 - INFO - Epoch [25/50], Step [800/844], Loss: 0.1445, Acc: 0.9219
+2025-05-11 23:45:11,482 - INFO - Epoch [25/50] Summary: Train Loss: 0.1739, Train Acc: 0.9476 | Val Loss: 0.1734, Val Acc: 0.9465
+2025-05-11 23:45:11,482 - INFO - Epoch 25: Learning rate updated to 0.000500
+2025-05-11 23:45:23,051 - INFO - Epoch [26/50], Step [100/844], Loss: 0.1025, Acc: 0.9531
+2025-05-11 23:45:28,994 - INFO - Epoch [26/50], Step [200/844], Loss: 0.1599, Acc: 0.9531
+2025-05-11 23:45:34,934 - INFO - Epoch [26/50], Step [300/844], Loss: 0.0525, Acc: 0.9844
+2025-05-11 23:45:40,892 - INFO - Epoch [26/50], Step [400/844], Loss: 0.2237, Acc: 0.9062
+2025-05-11 23:45:46,834 - INFO - Epoch [26/50], Step [500/844], Loss: 0.2525, Acc: 0.9062
+2025-05-11 23:45:52,747 - INFO - Epoch [26/50], Step [600/844], Loss: 0.0830, Acc: 0.9688
+2025-05-11 23:45:58,579 - INFO - Epoch [26/50], Step [700/844], Loss: 0.0436, Acc: 0.9844
+2025-05-11 23:46:04,511 - INFO - Epoch [26/50], Step [800/844], Loss: 0.0333, Acc: 1.0000
+2025-05-11 23:46:15,279 - INFO - Epoch [26/50] Summary: Train Loss: 0.1361, Train Acc: 0.9589 | Val Loss: 0.1261, Val Acc: 0.9618
+2025-05-11 23:46:15,279 - INFO - Epoch 26: Learning rate updated to 0.000345
+2025-05-11 23:46:27,725 - INFO - Epoch [27/50], Step [100/844], Loss: 0.0443, Acc: 0.9844
+2025-05-11 23:46:33,758 - INFO - Epoch [27/50], Step [200/844], Loss: 0.1332, Acc: 0.9531
+2025-05-11 23:46:39,732 - INFO - Epoch [27/50], Step [300/844], Loss: 0.0525, Acc: 0.9844
+2025-05-11 23:46:45,732 - INFO - Epoch [27/50], Step [400/844], Loss: 0.0713, Acc: 0.9844
+2025-05-11 23:46:51,731 - INFO - Epoch [27/50], Step [500/844], Loss: 0.0518, Acc: 0.9844
+2025-05-11 23:46:57,649 - INFO - Epoch [27/50], Step [600/844], Loss: 0.2643, Acc: 0.9219
+2025-05-11 23:47:03,574 - INFO - Epoch [27/50], Step [700/844], Loss: 0.0423, Acc: 0.9844
+2025-05-11 23:47:09,298 - INFO - Epoch [27/50], Step [800/844], Loss: 0.0336, Acc: 0.9844
+2025-05-11 23:47:19,464 - INFO - Epoch [27/50] Summary: Train Loss: 0.1022, Train Acc: 0.9693 | Val Loss: 0.0971, Val Acc: 0.9698
+2025-05-11 23:47:19,464 - INFO - Epoch 27: Learning rate updated to 0.000206
+2025-05-11 23:47:32,107 - INFO - Epoch [28/50], Step [100/844], Loss: 0.0537, Acc: 0.9844
+2025-05-11 23:47:38,053 - INFO - Epoch [28/50], Step [200/844], Loss: 0.0363, Acc: 0.9844
+2025-05-11 23:47:44,015 - INFO - Epoch [28/50], Step [300/844], Loss: 0.1279, Acc: 0.9531
+2025-05-11 23:47:50,028 - INFO - Epoch [28/50], Step [400/844], Loss: 0.2044, Acc: 0.9531
+2025-05-11 23:47:55,993 - INFO - Epoch [28/50], Step [500/844], Loss: 0.2606, Acc: 0.9531
+2025-05-11 23:48:01,786 - INFO - Epoch [28/50], Step [600/844], Loss: 0.0461, Acc: 0.9844
+2025-05-11 23:48:07,754 - INFO - Epoch [28/50], Step [700/844], Loss: 0.0799, Acc: 0.9844
+2025-05-11 23:48:11,767 - INFO - Epoch [28/50], Step [800/844], Loss: 0.0603, Acc: 0.9844
+2025-05-11 23:48:22,426 - INFO - Epoch [28/50] Summary: Train Loss: 0.0830, Train Acc: 0.9743 | Val Loss: 0.0872, Val Acc: 0.9737
+2025-05-11 23:48:22,426 - INFO - Epoch 28: Learning rate updated to 0.000095
+2025-05-11 23:48:35,467 - INFO - Epoch [29/50], Step [100/844], Loss: 0.0957, Acc: 0.9844
+2025-05-11 23:48:41,504 - INFO - Epoch [29/50], Step [200/844], Loss: 0.1046, Acc: 0.9531
+2025-05-11 23:48:47,410 - INFO - Epoch [29/50], Step [300/844], Loss: 0.0332, Acc: 0.9844
+2025-05-11 23:48:53,321 - INFO - Epoch [29/50], Step [400/844], Loss: 0.0654, Acc: 0.9688
+2025-05-11 23:48:57,595 - INFO - Epoch [29/50], Step [500/844], Loss: 0.0517, Acc: 0.9688
+2025-05-11 23:49:01,469 - INFO - Epoch [29/50], Step [600/844], Loss: 0.0195, Acc: 1.0000
+2025-05-11 23:49:05,816 - INFO - Epoch [29/50], Step [700/844], Loss: 0.0498, Acc: 0.9688
+2025-05-11 23:49:09,753 - INFO - Epoch [29/50], Step [800/844], Loss: 0.0924, Acc: 0.9844
+2025-05-11 23:49:22,146 - INFO - Epoch [29/50] Summary: Train Loss: 0.0742, Train Acc: 0.9772 | Val Loss: 0.0796, Val Acc: 0.9770
+2025-05-11 23:49:22,146 - INFO - Epoch 29: Learning rate updated to 0.000024
+2025-05-11 23:49:33,472 - INFO - Epoch [30/50], Step [100/844], Loss: 0.0325, Acc: 0.9844
+2025-05-11 23:49:37,689 - INFO - Epoch [30/50], Step [200/844], Loss: 0.0168, Acc: 1.0000
+2025-05-11 23:49:41,537 - INFO - Epoch [30/50], Step [300/844], Loss: 0.0725, Acc: 0.9844
+2025-05-11 23:49:47,153 - INFO - Epoch [30/50], Step [400/844], Loss: 0.0452, Acc: 0.9844
+2025-05-11 23:49:52,863 - INFO - Epoch [30/50], Step [500/844], Loss: 0.1515, Acc: 0.9531
+2025-05-11 23:49:58,548 - INFO - Epoch [30/50], Step [600/844], Loss: 0.0755, Acc: 0.9531
+2025-05-11 23:50:04,273 - INFO - Epoch [30/50], Step [700/844], Loss: 0.0074, Acc: 1.0000
+2025-05-11 23:50:09,966 - INFO - Epoch [30/50], Step [800/844], Loss: 0.0179, Acc: 1.0000
+2025-05-11 23:50:21,780 - INFO - Epoch [30/50] Summary: Train Loss: 0.0653, Train Acc: 0.9796 | Val Loss: 0.0797, Val Acc: 0.9767
+2025-05-11 23:50:21,780 - INFO - Epoch 30: Learning rate updated to 0.000000
+2025-05-11 23:50:33,089 - INFO - Epoch [31/50], Step [100/844], Loss: 0.0382, Acc: 0.9844
+2025-05-11 23:50:39,029 - INFO - Epoch [31/50], Step [200/844], Loss: 0.0202, Acc: 1.0000
+2025-05-11 23:50:44,979 - INFO - Epoch [31/50], Step [300/844], Loss: 0.1412, Acc: 0.9531
+2025-05-11 23:50:51,011 - INFO - Epoch [31/50], Step [400/844], Loss: 0.0297, Acc: 1.0000
+2025-05-11 23:50:56,878 - INFO - Epoch [31/50], Step [500/844], Loss: 0.0539, Acc: 0.9688
+2025-05-11 23:51:02,705 - INFO - Epoch [31/50], Step [600/844], Loss: 0.0380, Acc: 0.9844
+2025-05-11 23:51:08,613 - INFO - Epoch [31/50], Step [700/844], Loss: 0.0127, Acc: 1.0000
+2025-05-11 23:51:14,426 - INFO - Epoch [31/50], Step [800/844], Loss: 0.0480, Acc: 0.9844
+2025-05-11 23:51:26,044 - INFO - Epoch [31/50] Summary: Train Loss: 0.0622, Train Acc: 0.9802 | Val Loss: 0.0797, Val Acc: 0.9767
+2025-05-11 23:51:26,045 - INFO - Epoch 31: Learning rate updated to 0.000024
+2025-05-11 23:51:38,691 - INFO - Epoch [32/50], Step [100/844], Loss: 0.0750, Acc: 0.9688
+2025-05-11 23:51:44,688 - INFO - Epoch [32/50], Step [200/844], Loss: 0.1339, Acc: 0.9688
+2025-05-11 23:51:50,774 - INFO - Epoch [32/50], Step [300/844], Loss: 0.0392, Acc: 0.9844
+2025-05-11 23:51:56,688 - INFO - Epoch [32/50], Step [400/844], Loss: 0.0461, Acc: 0.9844
+2025-05-11 23:52:02,647 - INFO - Epoch [32/50], Step [500/844], Loss: 0.0080, Acc: 1.0000
+2025-05-11 23:52:08,516 - INFO - Epoch [32/50], Step [600/844], Loss: 0.0215, Acc: 0.9844
+2025-05-11 23:52:14,406 - INFO - Epoch [32/50], Step [700/844], Loss: 0.0518, Acc: 0.9844
+2025-05-11 23:52:20,204 - INFO - Epoch [32/50], Step [800/844], Loss: 0.1250, Acc: 0.9688
+2025-05-11 23:52:30,915 - INFO - Epoch [32/50] Summary: Train Loss: 0.0634, Train Acc: 0.9801 | Val Loss: 0.0790, Val Acc: 0.9758
+2025-05-11 23:52:30,915 - INFO - Epoch 32: Learning rate updated to 0.000095
+2025-05-11 23:52:43,241 - INFO - Epoch [33/50], Step [100/844], Loss: 0.0777, Acc: 0.9688
+2025-05-11 23:52:49,112 - INFO - Epoch [33/50], Step [200/844], Loss: 0.0248, Acc: 0.9844
+2025-05-11 23:52:54,921 - INFO - Epoch [33/50], Step [300/844], Loss: 0.0561, Acc: 0.9688
+2025-05-11 23:53:00,831 - INFO - Epoch [33/50], Step [400/844], Loss: 0.2228, Acc: 0.9375
+2025-05-11 23:53:06,781 - INFO - Epoch [33/50], Step [500/844], Loss: 0.1145, Acc: 0.9688
+2025-05-11 23:53:12,788 - INFO - Epoch [33/50], Step [600/844], Loss: 0.0664, Acc: 0.9844
+2025-05-11 23:53:18,730 - INFO - Epoch [33/50], Step [700/844], Loss: 0.0678, Acc: 0.9688
+2025-05-11 23:53:24,694 - INFO - Epoch [33/50], Step [800/844], Loss: 0.0401, Acc: 0.9844
+2025-05-11 23:53:35,907 - INFO - Epoch [33/50] Summary: Train Loss: 0.0645, Train Acc: 0.9794 | Val Loss: 0.0792, Val Acc: 0.9763
+2025-05-11 23:53:35,907 - INFO - Epoch 33: Learning rate updated to 0.000206
+2025-05-11 23:53:48,532 - INFO - Epoch [34/50], Step [100/844], Loss: 0.0338, Acc: 1.0000
+2025-05-11 23:53:54,486 - INFO - Epoch [34/50], Step [200/844], Loss: 0.1195, Acc: 0.9688
+2025-05-11 23:54:00,472 - INFO - Epoch [34/50], Step [300/844], Loss: 0.1337, Acc: 0.9531
+2025-05-11 23:54:06,460 - INFO - Epoch [34/50], Step [400/844], Loss: 0.0448, Acc: 1.0000
+2025-05-11 23:54:12,516 - INFO - Epoch [34/50], Step [500/844], Loss: 0.1390, Acc: 0.9531
+2025-05-11 23:54:18,498 - INFO - Epoch [34/50], Step [600/844], Loss: 0.0313, Acc: 0.9844
+2025-05-11 23:54:24,346 - INFO - Epoch [34/50], Step [700/844], Loss: 0.0324, Acc: 0.9844
+2025-05-11 23:54:28,708 - INFO - Epoch [34/50], Step [800/844], Loss: 0.0299, Acc: 0.9844
+2025-05-11 23:54:39,297 - INFO - Epoch [34/50] Summary: Train Loss: 0.0727, Train Acc: 0.9770 | Val Loss: 0.0910, Val Acc: 0.9745
+2025-05-11 23:54:39,297 - INFO - Epoch 34: Learning rate updated to 0.000345
+2025-05-11 23:54:52,472 - INFO - Epoch [35/50], Step [100/844], Loss: 0.0902, Acc: 0.9688
+2025-05-11 23:54:58,471 - INFO - Epoch [35/50], Step [200/844], Loss: 0.0682, Acc: 0.9844
+2025-05-11 23:55:04,498 - INFO - Epoch [35/50], Step [300/844], Loss: 0.0361, Acc: 0.9844
+2025-05-11 23:55:10,463 - INFO - Epoch [35/50], Step [400/844], Loss: 0.2814, Acc: 0.9219
+2025-05-11 23:55:15,973 - INFO - Epoch [35/50], Step [500/844], Loss: 0.0452, Acc: 1.0000
+2025-05-11 23:55:19,849 - INFO - Epoch [35/50], Step [600/844], Loss: 0.0191, Acc: 1.0000
+2025-05-11 23:55:24,096 - INFO - Epoch [35/50], Step [700/844], Loss: 0.1763, Acc: 0.9531
+2025-05-11 23:55:27,904 - INFO - Epoch [35/50], Step [800/844], Loss: 0.0494, Acc: 0.9844
+2025-05-11 23:55:39,228 - INFO - Epoch [35/50] Summary: Train Loss: 0.0858, Train Acc: 0.9728 | Val Loss: 0.0962, Val Acc: 0.9710
+2025-05-11 23:55:39,228 - INFO - Epoch 35: Learning rate updated to 0.000500
+2025-05-11 23:55:50,461 - INFO - Epoch [36/50], Step [100/844], Loss: 0.0842, Acc: 0.9531
+2025-05-11 23:55:54,670 - INFO - Epoch [36/50], Step [200/844], Loss: 0.1090, Acc: 0.9688
+2025-05-11 23:55:58,472 - INFO - Epoch [36/50], Step [300/844], Loss: 0.0464, Acc: 0.9844
+2025-05-11 23:56:03,224 - INFO - Epoch [36/50], Step [400/844], Loss: 0.0825, Acc: 0.9688
+2025-05-11 23:56:08,987 - INFO - Epoch [36/50], Step [500/844], Loss: 0.2139, Acc: 0.9375
+2025-05-11 23:56:14,884 - INFO - Epoch [36/50], Step [600/844], Loss: 0.0541, Acc: 0.9844
+2025-05-11 23:56:21,017 - INFO - Epoch [36/50], Step [700/844], Loss: 0.0251, Acc: 1.0000
+2025-05-11 23:56:26,821 - INFO - Epoch [36/50], Step [800/844], Loss: 0.0614, Acc: 0.9531
+2025-05-11 23:56:39,806 - INFO - Epoch [36/50] Summary: Train Loss: 0.1173, Train Acc: 0.9635 | Val Loss: 0.1031, Val Acc: 0.9692
+2025-05-11 23:56:39,806 - INFO - Epoch 36: Learning rate updated to 0.000655
+2025-05-11 23:56:51,381 - INFO - Epoch [37/50], Step [100/844], Loss: 0.1254, Acc: 0.9844
+2025-05-11 23:56:57,641 - INFO - Epoch [37/50], Step [200/844], Loss: 0.1417, Acc: 0.9531
+2025-05-11 23:57:03,766 - INFO - Epoch [37/50], Step [300/844], Loss: 0.1100, Acc: 0.9531
+2025-05-11 23:57:09,944 - INFO - Epoch [37/50], Step [400/844], Loss: 0.1337, Acc: 0.9219
+2025-05-11 23:57:16,186 - INFO - Epoch [37/50], Step [500/844], Loss: 0.1019, Acc: 0.9844
+2025-05-11 23:57:22,452 - INFO - Epoch [37/50], Step [600/844], Loss: 0.1635, Acc: 0.9688
+2025-05-11 23:57:28,586 - INFO - Epoch [37/50], Step [700/844], Loss: 0.0465, Acc: 0.9844
+2025-05-11 23:57:34,642 - INFO - Epoch [37/50], Step [800/844], Loss: 0.0833, Acc: 0.9844
+2025-05-11 23:57:46,301 - INFO - Epoch [37/50] Summary: Train Loss: 0.1226, Train Acc: 0.9626 | Val Loss: 0.1159, Val Acc: 0.9660
+2025-05-11 23:57:46,302 - INFO - Epoch 37: Learning rate updated to 0.000794
+2025-05-11 23:57:58,488 - INFO - Epoch [38/50], Step [100/844], Loss: 0.1212, Acc: 0.9688
+2025-05-11 23:58:04,504 - INFO - Epoch [38/50], Step [200/844], Loss: 0.2099, Acc: 0.9688
+2025-05-11 23:58:10,512 - INFO - Epoch [38/50], Step [300/844], Loss: 0.1635, Acc: 0.9531
+2025-05-11 23:58:16,483 - INFO - Epoch [38/50], Step [400/844], Loss: 0.0202, Acc: 1.0000
+2025-05-11 23:58:22,545 - INFO - Epoch [38/50], Step [500/844], Loss: 0.0440, Acc: 0.9844
+2025-05-11 23:58:28,494 - INFO - Epoch [38/50], Step [600/844], Loss: 0.0357, Acc: 0.9844
+2025-05-11 23:58:34,484 - INFO - Epoch [38/50], Step [700/844], Loss: 0.1453, Acc: 0.9531
+2025-05-11 23:58:40,448 - INFO - Epoch [38/50], Step [800/844], Loss: 0.2225, Acc: 0.9375
+2025-05-11 23:58:51,908 - INFO - Epoch [38/50] Summary: Train Loss: 0.1370, Train Acc: 0.9585 | Val Loss: 0.1215, Val Acc: 0.9650
+2025-05-11 23:58:51,908 - INFO - Epoch 38: Learning rate updated to 0.000905
+2025-05-11 23:59:04,811 - INFO - Epoch [39/50], Step [100/844], Loss: 0.1327, Acc: 0.9531
+2025-05-11 23:59:10,800 - INFO - Epoch [39/50], Step [200/844], Loss: 0.2891, Acc: 0.9219
+2025-05-11 23:59:16,806 - INFO - Epoch [39/50], Step [300/844], Loss: 0.0563, Acc: 0.9688
+2025-05-11 23:59:22,806 - INFO - Epoch [39/50], Step [400/844], Loss: 0.2275, Acc: 0.9375
+2025-05-11 23:59:28,770 - INFO - Epoch [39/50], Step [500/844], Loss: 0.0700, Acc: 0.9688
+2025-05-11 23:59:34,763 - INFO - Epoch [39/50], Step [600/844], Loss: 0.0330, Acc: 0.9844
+2025-05-11 23:59:40,766 - INFO - Epoch [39/50], Step [700/844], Loss: 0.1329, Acc: 0.9531
+2025-05-11 23:59:46,786 - INFO - Epoch [39/50], Step [800/844], Loss: 0.1740, Acc: 0.9531
+2025-05-11 23:59:57,477 - INFO - Epoch [39/50] Summary: Train Loss: 0.1585, Train Acc: 0.9521 | Val Loss: 0.1641, Val Acc: 0.9533
+2025-05-11 23:59:57,477 - INFO - Epoch 39: Learning rate updated to 0.000976
+2025-05-12 00:00:10,224 - INFO - Epoch [40/50], Step [100/844], Loss: 0.1563, Acc: 0.9531
+2025-05-12 00:00:16,065 - INFO - Epoch [40/50], Step [200/844], Loss: 0.1872, Acc: 0.9375
+2025-05-12 00:00:21,842 - INFO - Epoch [40/50], Step [300/844], Loss: 0.2377, Acc: 0.9531
+2025-05-12 00:00:27,611 - INFO - Epoch [40/50], Step [400/844], Loss: 0.1417, Acc: 0.9688
+2025-05-12 00:00:33,460 - INFO - Epoch [40/50], Step [500/844], Loss: 0.3251, Acc: 0.8906
+2025-05-12 00:00:39,195 - INFO - Epoch [40/50], Step [600/844], Loss: 0.2099, Acc: 0.9375
+2025-05-12 00:00:44,588 - INFO - Epoch [40/50], Step [700/844], Loss: 0.0810, Acc: 1.0000
+2025-05-12 00:00:48,433 - INFO - Epoch [40/50], Step [800/844], Loss: 0.1026, Acc: 0.9531
+2025-05-12 00:00:58,629 - INFO - Epoch [40/50] Summary: Train Loss: 0.1756, Train Acc: 0.9459 | Val Loss: 0.1623, Val Acc: 0.9535
+2025-05-12 00:00:58,629 - INFO - Epoch 40: Learning rate updated to 0.001000
+2025-05-12 00:01:11,430 - INFO - Epoch [41/50], Step [100/844], Loss: 0.1193, Acc: 0.9844
+2025-05-12 00:01:17,320 - INFO - Epoch [41/50], Step [200/844], Loss: 0.2113, Acc: 0.9375
+2025-05-12 00:01:23,183 - INFO - Epoch [41/50], Step [300/844], Loss: 0.2173, Acc: 0.9375
+2025-05-12 00:01:28,390 - INFO - Epoch [41/50], Step [400/844], Loss: 0.1616, Acc: 0.9219
+2025-05-12 00:01:32,323 - INFO - Epoch [41/50], Step [500/844], Loss: 0.2835, Acc: 0.9062
+2025-05-12 00:01:36,655 - INFO - Epoch [41/50], Step [600/844], Loss: 0.1639, Acc: 0.9375
+2025-05-12 00:01:40,603 - INFO - Epoch [41/50], Step [700/844], Loss: 0.1747, Acc: 0.9531
+2025-05-12 00:01:45,014 - INFO - Epoch [41/50], Step [800/844], Loss: 0.4028, Acc: 0.8594
+2025-05-12 00:01:57,493 - INFO - Epoch [41/50] Summary: Train Loss: 0.1848, Train Acc: 0.9438 | Val Loss: 0.2015, Val Acc: 0.9422
+2025-05-12 00:01:57,493 - INFO - Epoch 41: Learning rate updated to 0.000976
+2025-05-12 00:02:09,338 - INFO - Epoch [42/50], Step [100/844], Loss: 0.2129, Acc: 0.9062
+2025-05-12 00:02:13,397 - INFO - Epoch [42/50], Step [200/844], Loss: 0.3160, Acc: 0.9531
+2025-05-12 00:02:18,130 - INFO - Epoch [42/50], Step [300/844], Loss: 0.0931, Acc: 0.9844
+2025-05-12 00:02:23,943 - INFO - Epoch [42/50], Step [400/844], Loss: 0.1442, Acc: 0.9531
+2025-05-12 00:02:29,641 - INFO - Epoch [42/50], Step [500/844], Loss: 0.0530, Acc: 1.0000
+2025-05-12 00:02:35,409 - INFO - Epoch [42/50], Step [600/844], Loss: 0.4148, Acc: 0.8750
+2025-05-12 00:02:41,064 - INFO - Epoch [42/50], Step [700/844], Loss: 0.2963, Acc: 0.9375
+2025-05-12 00:02:46,649 - INFO - Epoch [42/50], Step [800/844], Loss: 0.1370, Acc: 0.9844
+2025-05-12 00:02:58,530 - INFO - Epoch [42/50] Summary: Train Loss: 0.2166, Train Acc: 0.9336 | Val Loss: 0.1375, Val Acc: 0.9580
+2025-05-12 00:02:58,531 - INFO - Epoch 42: Learning rate updated to 0.000905
+2025-05-12 00:03:09,921 - INFO - Epoch [43/50], Step [100/844], Loss: 0.1533, Acc: 0.9375
+2025-05-12 00:03:15,823 - INFO - Epoch [43/50], Step [200/844], Loss: 0.0677, Acc: 0.9688
+2025-05-12 00:03:21,525 - INFO - Epoch [43/50], Step [300/844], Loss: 0.2097, Acc: 0.9219
+2025-05-12 00:03:27,404 - INFO - Epoch [43/50], Step [400/844], Loss: 0.2448, Acc: 0.9219
+2025-05-12 00:03:33,268 - INFO - Epoch [43/50], Step [500/844], Loss: 0.1258, Acc: 0.9375
+2025-05-12 00:03:39,036 - INFO - Epoch [43/50], Step [600/844], Loss: 0.2407, Acc: 0.9375
+2025-05-12 00:03:44,692 - INFO - Epoch [43/50], Step [700/844], Loss: 0.3810, Acc: 0.8906
+2025-05-12 00:03:50,438 - INFO - Epoch [43/50], Step [800/844], Loss: 0.2449, Acc: 0.9531
+2025-05-12 00:04:02,086 - INFO - Epoch [43/50] Summary: Train Loss: 0.1866, Train Acc: 0.9427 | Val Loss: 0.2202, Val Acc: 0.9353
+2025-05-12 00:04:02,086 - INFO - Epoch 43: Learning rate updated to 0.000794
+2025-05-12 00:04:14,995 - INFO - Epoch [44/50], Step [100/844], Loss: 0.1471, Acc: 0.9531
+2025-05-12 00:04:21,043 - INFO - Epoch [44/50], Step [200/844], Loss: 0.1439, Acc: 0.9531
+2025-05-12 00:04:27,073 - INFO - Epoch [44/50], Step [300/844], Loss: 0.1557, Acc: 0.9531
+2025-05-12 00:04:33,022 - INFO - Epoch [44/50], Step [400/844], Loss: 0.1439, Acc: 0.9531
+2025-05-12 00:04:38,904 - INFO - Epoch [44/50], Step [500/844], Loss: 0.1835, Acc: 0.9375
+2025-05-12 00:04:44,840 - INFO - Epoch [44/50], Step [600/844], Loss: 0.1905, Acc: 0.9531
+2025-05-12 00:04:50,742 - INFO - Epoch [44/50], Step [700/844], Loss: 0.1438, Acc: 0.9531
+2025-05-12 00:04:56,626 - INFO - Epoch [44/50], Step [800/844], Loss: 0.1431, Acc: 0.9375
+2025-05-12 00:05:08,167 - INFO - Epoch [44/50] Summary: Train Loss: 0.1636, Train Acc: 0.9500 | Val Loss: 0.1366, Val Acc: 0.9608
+2025-05-12 00:05:08,168 - INFO - Epoch 44: Learning rate updated to 0.000655
+2025-05-12 00:05:21,164 - INFO - Epoch [45/50], Step [100/844], Loss: 0.0951, Acc: 0.9688
+2025-05-12 00:05:27,138 - INFO - Epoch [45/50], Step [200/844], Loss: 0.2043, Acc: 0.8906
+2025-05-12 00:05:33,099 - INFO - Epoch [45/50], Step [300/844], Loss: 0.0165, Acc: 1.0000
+2025-05-12 00:05:39,038 - INFO - Epoch [45/50], Step [400/844], Loss: 0.1995, Acc: 0.9375
+2025-05-12 00:05:45,032 - INFO - Epoch [45/50], Step [500/844], Loss: 0.0855, Acc: 0.9688
+2025-05-12 00:05:51,043 - INFO - Epoch [45/50], Step [600/844], Loss: 0.1775, Acc: 0.9531
+2025-05-12 00:05:57,021 - INFO - Epoch [45/50], Step [700/844], Loss: 0.2439, Acc: 0.9219
+2025-05-12 00:06:03,040 - INFO - Epoch [45/50], Step [800/844], Loss: 0.1301, Acc: 0.9531
+2025-05-12 00:06:14,051 - INFO - Epoch [45/50] Summary: Train Loss: 0.1291, Train Acc: 0.9602 | Val Loss: 0.1119, Val Acc: 0.9667
+2025-05-12 00:06:14,051 - INFO - Epoch 45: Learning rate updated to 0.000500
+2025-05-12 00:06:27,465 - INFO - Epoch [46/50], Step [100/844], Loss: 0.1334, Acc: 0.9531
+2025-05-12 00:06:33,730 - INFO - Epoch [46/50], Step [200/844], Loss: 0.1876, Acc: 0.9375
+2025-05-12 00:06:39,721 - INFO - Epoch [46/50], Step [300/844], Loss: 0.1006, Acc: 0.9688
+2025-05-12 00:06:45,573 - INFO - Epoch [46/50], Step [400/844], Loss: 0.0987, Acc: 0.9688
+2025-05-12 00:06:51,422 - INFO - Epoch [46/50], Step [500/844], Loss: 0.0346, Acc: 1.0000
+2025-05-12 00:06:57,281 - INFO - Epoch [46/50], Step [600/844], Loss: 0.0900, Acc: 0.9531
+2025-05-12 00:07:03,157 - INFO - Epoch [46/50], Step [700/844], Loss: 0.0526, Acc: 0.9844
+2025-05-12 00:07:07,872 - INFO - Epoch [46/50], Step [800/844], Loss: 0.0669, Acc: 0.9688
+2025-05-12 00:07:19,154 - INFO - Epoch [46/50] Summary: Train Loss: 0.1109, Train Acc: 0.9644 | Val Loss: 0.0977, Val Acc: 0.9708
+2025-05-12 00:07:19,155 - INFO - Epoch 46: Learning rate updated to 0.000345
+2025-05-12 00:07:31,933 - INFO - Epoch [47/50], Step [100/844], Loss: 0.0448, Acc: 0.9844
+2025-05-12 00:07:37,749 - INFO - Epoch [47/50], Step [200/844], Loss: 0.0671, Acc: 0.9688
+2025-05-12 00:07:43,635 - INFO - Epoch [47/50], Step [300/844], Loss: 0.0243, Acc: 1.0000
+2025-05-12 00:07:49,510 - INFO - Epoch [47/50], Step [400/844], Loss: 0.0922, Acc: 0.9531
+2025-05-12 00:07:55,290 - INFO - Epoch [47/50], Step [500/844], Loss: 0.0746, Acc: 0.9688
+2025-05-12 00:08:00,697 - INFO - Epoch [47/50], Step [600/844], Loss: 0.0923, Acc: 0.9844
+2025-05-12 00:08:04,647 - INFO - Epoch [47/50], Step [700/844], Loss: 0.2117, Acc: 0.9531
+2025-05-12 00:08:09,030 - INFO - Epoch [47/50], Step [800/844], Loss: 0.0483, Acc: 0.9844
+2025-05-12 00:08:19,426 - INFO - Epoch [47/50] Summary: Train Loss: 0.0942, Train Acc: 0.9707 | Val Loss: 0.1001, Val Acc: 0.9710
+2025-05-12 00:08:19,427 - INFO - Epoch 47: Learning rate updated to 0.000206
+2025-05-12 00:08:30,109 - INFO - Epoch [48/50], Step [100/844], Loss: 0.1956, Acc: 0.9062
+2025-05-12 00:08:34,056 - INFO - Epoch [48/50], Step [200/844], Loss: 0.0272, Acc: 0.9844
+2025-05-12 00:08:38,071 - INFO - Epoch [48/50], Step [300/844], Loss: 0.0254, Acc: 1.0000
+2025-05-12 00:08:42,002 - INFO - Epoch [48/50], Step [400/844], Loss: 0.1018, Acc: 0.9688
+2025-05-12 00:08:46,222 - INFO - Epoch [48/50], Step [500/844], Loss: 0.2335, Acc: 0.9531
+2025-05-12 00:08:50,331 - INFO - Epoch [48/50], Step [600/844], Loss: 0.1533, Acc: 0.9531
+2025-05-12 00:08:54,228 - INFO - Epoch [48/50], Step [700/844], Loss: 0.0179, Acc: 0.9844
+2025-05-12 00:08:58,320 - INFO - Epoch [48/50], Step [800/844], Loss: 0.0186, Acc: 1.0000
+2025-05-12 00:09:08,813 - INFO - Epoch [48/50] Summary: Train Loss: 0.0787, Train Acc: 0.9750 | Val Loss: 0.0860, Val Acc: 0.9732
+2025-05-12 00:09:08,814 - INFO - Epoch 48: Learning rate updated to 0.000095
+2025-05-12 00:09:19,532 - INFO - Epoch [49/50], Step [100/844], Loss: 0.0443, Acc: 0.9844
+2025-05-12 00:09:23,491 - INFO - Epoch [49/50], Step [200/844], Loss: 0.1016, Acc: 0.9688
+2025-05-12 00:09:27,421 - INFO - Epoch [49/50], Step [300/844], Loss: 0.2980, Acc: 0.9531
+2025-05-12 00:09:31,316 - INFO - Epoch [49/50], Step [400/844], Loss: 0.1980, Acc: 0.9375
+2025-05-12 00:09:35,265 - INFO - Epoch [49/50], Step [500/844], Loss: 0.0408, Acc: 0.9844
+2025-05-12 00:09:39,431 - INFO - Epoch [49/50], Step [600/844], Loss: 0.1086, Acc: 0.9531
+2025-05-12 00:09:43,473 - INFO - Epoch [49/50], Step [700/844], Loss: 0.0282, Acc: 1.0000
+2025-05-12 00:09:47,457 - INFO - Epoch [49/50], Step [800/844], Loss: 0.0787, Acc: 0.9688
+2025-05-12 00:09:57,833 - INFO - Epoch [49/50] Summary: Train Loss: 0.0669, Train Acc: 0.9791 | Val Loss: 0.0789, Val Acc: 0.9748
+2025-05-12 00:09:57,833 - INFO - Epoch 49: Learning rate updated to 0.000024
+2025-05-12 00:10:05,430 - INFO - Epoch [50/50], Step [100/844], Loss: 0.1455, Acc: 0.9531
+2025-05-12 00:10:07,008 - INFO - Epoch [50/50], Step [200/844], Loss: 0.0454, Acc: 0.9844
+2025-05-12 00:10:08,479 - INFO - Epoch [50/50], Step [300/844], Loss: 0.0947, Acc: 0.9531
+2025-05-12 00:10:09,984 - INFO - Epoch [50/50], Step [400/844], Loss: 0.0526, Acc: 0.9844
+2025-05-12 00:10:11,518 - INFO - Epoch [50/50], Step [500/844], Loss: 0.0046, Acc: 1.0000
+2025-05-12 00:10:13,077 - INFO - Epoch [50/50], Step [600/844], Loss: 0.0348, Acc: 0.9844
+2025-05-12 00:10:14,601 - INFO - Epoch [50/50], Step [700/844], Loss: 0.0767, Acc: 0.9688
+2025-05-12 00:10:16,154 - INFO - Epoch [50/50], Step [800/844], Loss: 0.0111, Acc: 1.0000
+2025-05-12 00:10:23,964 - INFO - Epoch [50/50] Summary: Train Loss: 0.0597, Train Acc: 0.9814 | Val Loss: 0.0774, Val Acc: 0.9758
+2025-05-12 00:10:23,964 - INFO - Epoch 50: Learning rate updated to 0.000000
+2025-05-12 00:10:23,964 - INFO - Training finished.
+2025-05-12 00:10:24,263 - INFO - Training curves saved to runs\transformer_20250511_232256\results\loss_accuracy_curves.png

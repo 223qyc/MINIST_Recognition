@@ -1,0 +1,33 @@
+2025-05-12 00:18:11,423 - INFO - Arguments: Namespace(model_type='cnn', model_path='runs/cnn_20250511_225537/cnn_best.pth', batch_size=64, num_workers=2)
+2025-05-12 00:18:11,423 - INFO - Logging and results will be saved to: runs/cnn_20250511_225537\test_results
+2025-05-12 00:18:11,424 - INFO - Using device: cuda
+2025-05-12 00:18:11,424 - INFO - Using results directory: runs/cnn_20250511_225537\test_results
+2025-05-12 00:18:11,431 - INFO - Test dataset loaded: 10000 samples
+2025-05-12 00:18:11,506 - INFO - Starting evaluation...
+2025-05-12 00:18:17,183 - INFO - 
+--- Test Results ---
+2025-05-12 00:18:17,183 - INFO - Average Test Loss: 0.0237
+2025-05-12 00:18:17,183 - INFO - Accuracy: 0.9946
+2025-05-12 00:18:17,184 - INFO - 
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       980
+           1       1.00      1.00      1.00      1135
+           2       1.00      0.99      1.00      1032
+           3       1.00      1.00      1.00      1010
+           4       0.99      1.00      0.99       982
+           5       0.99      0.99      0.99       892
+           6       1.00      1.00      1.00       958
+           7       0.99      0.99      0.99      1028
+           8       1.00      0.99      1.00       974
+           9       0.99      0.99      0.99      1009
+
+    accuracy                           0.99     10000
+   macro avg       0.99      0.99      0.99     10000
+weighted avg       0.99      0.99      0.99     10000
+
+2025-05-12 00:18:17,404 - INFO - Confusion matrix saved to runs/cnn_20250511_225537\test_results\confusion_matrix.png
+2025-05-12 00:18:17,537 - INFO - Precision-Recall curves saved to runs/cnn_20250511_225537\test_results\precision_recall_curves.png
+2025-05-12 00:18:17,639 - INFO - ROC curves saved to runs/cnn_20250511_225537\test_results\roc_curves.png
+2025-05-12 00:18:17,639 - INFO - Testing finished.

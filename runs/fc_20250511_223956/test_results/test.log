@@ -1,0 +1,33 @@
+2025-05-12 00:15:36,485 - INFO - Arguments: Namespace(model_type='fc', model_path='runs/fc_20250511_223956/fc_best.pth', batch_size=64, num_workers=2)
+2025-05-12 00:15:36,485 - INFO - Logging and results will be saved to: runs/fc_20250511_223956\test_results
+2025-05-12 00:15:36,485 - INFO - Using device: cuda
+2025-05-12 00:15:36,485 - INFO - Using results directory: runs/fc_20250511_223956\test_results
+2025-05-12 00:15:36,494 - INFO - Test dataset loaded: 10000 samples
+2025-05-12 00:15:36,585 - INFO - Starting evaluation...
+2025-05-12 00:15:41,702 - INFO - 
+--- Test Results ---
+2025-05-12 00:15:41,702 - INFO - Average Test Loss: 0.0747
+2025-05-12 00:15:41,702 - INFO - Accuracy: 0.9857
+2025-05-12 00:15:41,703 - INFO - 
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99       980
+           1       0.99      0.99      0.99      1135
+           2       0.99      0.99      0.99      1032
+           3       0.98      0.99      0.98      1010
+           4       0.99      0.98      0.98       982
+           5       0.99      0.98      0.99       892
+           6       0.99      0.99      0.99       958
+           7       0.98      0.98      0.98      1028
+           8       0.99      0.98      0.98       974
+           9       0.98      0.98      0.98      1009
+
+    accuracy                           0.99     10000
+   macro avg       0.99      0.99      0.99     10000
+weighted avg       0.99      0.99      0.99     10000
+
+2025-05-12 00:15:41,939 - INFO - Confusion matrix saved to runs/fc_20250511_223956\test_results\confusion_matrix.png
+2025-05-12 00:15:42,073 - INFO - Precision-Recall curves saved to runs/fc_20250511_223956\test_results\precision_recall_curves.png
+2025-05-12 00:15:42,181 - INFO - ROC curves saved to runs/fc_20250511_223956\test_results\roc_curves.png
+2025-05-12 00:15:42,182 - INFO - Testing finished.

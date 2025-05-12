@@ -150,6 +150,10 @@ def test(args, results_dir): # Accept results_dir as an argument
         return
 
     model.eval()
+    # 加载训练好的权重
+    if args.model_path:
+        state_dict = torch.load(args.model_path, map_location=device)
+        model.load_state_dict(state_dict)
 
     # val loop
     all_labels = []

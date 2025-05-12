@@ -1,0 +1,33 @@
+2025-05-12 00:19:45,044 - INFO - Arguments: Namespace(model_type='transformer', model_path='runs/transformer_20250511_232256/transformer_best.pth', batch_size=64, num_workers=2)
+2025-05-12 00:19:45,045 - INFO - Logging and results will be saved to: runs/transformer_20250511_232256\test_results
+2025-05-12 00:19:45,045 - INFO - Using device: cuda
+2025-05-12 00:19:45,045 - INFO - Using results directory: runs/transformer_20250511_232256\test_results
+2025-05-12 00:19:45,051 - INFO - Test dataset loaded: 10000 samples
+2025-05-12 00:19:45,244 - INFO - Starting evaluation...
+2025-05-12 00:19:52,036 - INFO - 
+--- Test Results ---
+2025-05-12 00:19:52,036 - INFO - Average Test Loss: 0.0555
+2025-05-12 00:19:52,036 - INFO - Accuracy: 0.9839
+2025-05-12 00:19:52,037 - INFO - 
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99       980
+           1       0.99      1.00      0.99      1135
+           2       0.98      0.98      0.98      1032
+           3       0.99      0.99      0.99      1010
+           4       0.98      0.98      0.98       982
+           5       0.99      0.98      0.99       892
+           6       0.99      0.99      0.99       958
+           7       0.97      0.99      0.98      1028
+           8       0.99      0.97      0.98       974
+           9       0.98      0.97      0.97      1009
+
+    accuracy                           0.98     10000
+   macro avg       0.98      0.98      0.98     10000
+weighted avg       0.98      0.98      0.98     10000
+
+2025-05-12 00:19:52,273 - INFO - Confusion matrix saved to runs/transformer_20250511_232256\test_results\confusion_matrix.png
+2025-05-12 00:19:52,404 - INFO - Precision-Recall curves saved to runs/transformer_20250511_232256\test_results\precision_recall_curves.png
+2025-05-12 00:19:52,519 - INFO - ROC curves saved to runs/transformer_20250511_232256\test_results\roc_curves.png
+2025-05-12 00:19:52,520 - INFO - Testing finished.
